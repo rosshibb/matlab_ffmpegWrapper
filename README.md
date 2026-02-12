@@ -6,11 +6,11 @@ The wrapper’s main use case is to take a folder of frames and export a video t
 
 #### Shared flags
 
-* **_encoder_**: By default the wrapper will use the libx264 encoder which is good for high-compression video that should play on just about anything. The presets and profiles are tied to the encoder, so be aware that if you change the encoder, the same presets and profile flags might not work.
-* **_preset_**: controls the tradeoff between encoding speed and compression ratio. Default “medium”.
-* **_profile_**: option to change encoder’s feature set. Some devices may support different profiles. The default for the wrapper is “high” which should be supported for all modern devices.
-* **_movFlagOn_**: allows for progressive playback (video can start playing before being completely downloaded) Default 1.
-* **_oddDimDivBy2_**: The encoder is expecting that the frames’ height and width are divisible by 2. This flag will automatically add padding if needed to the right and/or bottom of the images. If you want to scale the images to the divisible by 2 or otherwise, input that flag here (‘-vf ‘ included automatically). Default "pad=ceil(iw/2)\*2:ceil(ih/2)\*2:color=0x"
+* **_encoder_**: By default the wrapper will use the libx264 encoder which is good for high-compression video that should play on just about anything. The presets and profiles are tied to the encoder, so be aware that if you change the encoder, the same presets and profile flags might not work. (Default: "libx264"
+* **_preset_**: controls the tradeoff between encoding speed and compression ratio. Default: “medium”
+* **_profile_**: option to change encoder’s feature set. Some devices may support different profiles. The default for the wrapper is “high” which should be supported for all modern devices. Default: "high"
+* **_movFlagOn_**: allows for progressive playback (video can start playing before being completely downloaded) Default: 1
+* **_oddDimDivBy2_**: The encoder is expecting that the frames’ height and width are divisible by 2. This flag will automatically add padding if needed to the right and/or bottom of the images. If you want to scale the images to the divisible by 2 or otherwise, input that flag here (‘-vf ‘ included automatically). Default: "pad=ceil(iw/2)\*2:ceil(ih/2)\*2:color=0x"
 * **_paddingBackgroundColor_**: the color of the background so the padding will blend with the image. Expects hex format. Default: “FFFFFF”
 * **_customImgPathsOn_**: Enables alternate (concat) mode. Default: 0
 * **_customFlag_**: Any additional flags that you would like to include. Default: ‘’
